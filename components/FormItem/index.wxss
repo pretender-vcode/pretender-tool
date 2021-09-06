@@ -1,0 +1,51 @@
+/* components/FormItem/index.wxss */
+.form-item {
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+    margin: 0 40rpx;
+    min-height: 100rpx;
+  }
+  
+  .border {
+    border-bottom: 2rpx solid #ddd;
+  }
+  
+  .svg-icon {
+    width: 30rpx;
+    height: 30rpx;
+    /* margin-top:10rpx; */
+  }
+  
+  .form-item-label {
+    flex: 1;
+    color: #666;
+  }
+  
+  .form-item-content {
+    max-width: 70%;
+    min-width: 80rpx;
+    text-align: right;
+    /* overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; */
+  }
+  .form-item-label image{
+    max-width: 120rpx;
+    max-height: 120rpx;
+  }
+  .form-item-content image {
+    max-width: 120rpx;
+    max-height: 120rpx;
+  }
+  
+  .form-item-right {
+    width: 60rpx;
+    text-align: right;
+    margin-top:10rpx;
+  }
+  
+  .active {
+    background: #ddd;
+  }
+  

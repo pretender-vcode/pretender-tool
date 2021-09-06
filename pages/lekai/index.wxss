@@ -1,0 +1,33 @@
+/* pages/lekai/index.wxss */
+.bluetooth {
+    width: 100vw;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 20rpx;  
+  }
+  .bluetooth-wrapper {
+    height: 60vh;
+    overflow: auto;
+    box-sizing: border-box;
+  }
+  
+  .list-item {
+    border: 1rpx solid #ddd;
+    border-radius: 10rpx;
+    margin-top: 20rpx;
+    padding: 20rpx;
+    display: flex;
+  }
+  .list-item.is-active {
+    border: 1rpx solid #4cd162;
+  }
+  
+  .list-item .btn {
+    width: 200rpx;
+    height: 80rpx;
+  }
+  
+  .tools .btn {
+    width: 100%;
+    margin-top: 20rpx;
+  }

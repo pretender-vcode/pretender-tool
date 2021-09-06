@@ -1,0 +1,40 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/lekai/index",
+        "pages/lita/index",
+        "pages/logs/logs"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "打野装备",
+        "navigationBarTextStyle": "black"
+    },
+    "usingComponents": {
+        "icon-font": "/components/iconfont/iconfont",
+        "van-dialog": "@vant/weapp/dialog/index",
+        "van-notify": "@vant/weapp/notify/index",
+        "van-icon": "@vant/weapp/icon/index",
+        "van-search": "@vant/weapp/search/index",
+        "van-radio": "@vant/weapp/radio/index",
+        "van-radio-group": "@vant/weapp/radio-group/index",
+        "van-checkbox": "@vant/weapp/checkbox/index",
+        "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+        "van-tag": "@vant/weapp/tag/index",
+        "van-picker": "@vant/weapp/picker/index",
+        "van-button": "@vant/weapp/button/index",
+        "van-popup": "@vant/weapp/popup/index",
+        "van-cell": "@vant/weapp/cell/index",
+        "van-cell-group": "@vant/weapp/cell-group/index",
+        "van-field": "@vant/weapp/field/index",
+        "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+        "van-datetime-picker": "@vant/weapp/datetime-picker/index",
+        "van-tab": "@vant/weapp/tab/index",
+        "van-tabs": "@vant/weapp/tabs/index",
+        "van-empty": "@vant/weapp/empty/index",
+        "form-item": "/components/FormItem/index",
+        "popup-picker": "/components/PopupPicker/index"
+    },
+    "sitemapLocation": "sitemap.json"
+}

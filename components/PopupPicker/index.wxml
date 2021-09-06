@@ -1,0 +1,20 @@
+<!--components/PopPicker/index.wxml-->
+<view class="ui-pop-picker">
+    <view class="model-wrapper">
+        <van-cell custom-class="global-cell"
+            title-class="{{ !myValue ? 'cell-title-placeholder' : readonly ? 'cell-title-readonly' : '' }}"
+            title="{{ myValue || placeholder }}" is-link="{{ !readonly }}" value="" border="{{ false }}"
+            bind:click="handleClick" />
+        <view class="icon-close" wx:if="{{ clearable && myValue }}">
+            <van-icon name="close" catchtap="handleClear"></van-icon>
+        </view>
+    </view>
+    <van-popup show="{{ popShow }}" position="bottom" z-index="999" custom-class="my-picker-popup" custom-style="width: 100%; min-height: 20vh" round
+        bind:close="handleClose">
+        <div class="pop-header">
+        {{ placeholder }}
+        <van-icon name="cross" size="32rpx" custom-class="my-picker-close-icon" bindtap="handleClose"/>
+        </div>
+        <van-picker show-toolbar toolbar-position="bottom" custom-class="my-picker" columns="{{ dataArr }}" bind:confirm="onConfirm" bind:cancel="handleClose"></van-picker>
+    </van-popup>
+</view>

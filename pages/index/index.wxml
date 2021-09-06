@@ -1,0 +1,15 @@
+<!--pages/index/index.wxml-->
+<view class="home">
+    <view class="tool-wrapper center">
+        <view class="tool-item" wx:for="{{ toolList }}" wx:for-item="item" wx:key="id" data-item="{{ item }}"
+            bindtap="redirectPage">
+            <view class="tool-item-icon">
+                <icon-font name="{{ item.icon}}" color="#467ee6"></icon-font>
+            </view>
+            <view class="tool-item-title">{{ item.name}}</view>
+        </view>
+    </view>
+    <view class="footer">
+        <popup-picker  columns="{{ envList }}" options="{{ envOption }}" placeholder="请选择运行环境" clearable bind:setValue="setEnv"></popup-picker>
+    </view>
+</view>

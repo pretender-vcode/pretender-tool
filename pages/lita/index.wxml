@@ -1,0 +1,123 @@
+<!-- index.wxml -->
+<view class="bluetooth">
+    <view class="spilt-line">----------信息栏----------</view>
+    <view class="bluetooth-wrapper">
+        <view wx:if="{{ currentCMD === 'getDeviceList' }}">
+            <view class="list-item {{ currentDevice.deviceId === item.deviceId ? 'is-active' : '' }}"
+                wx:for="{{ deviceList }}" wx:for-item="item" wx:key="deviceId" data-item="{{ item }}">
+                <view class="list-item-left">
+                    <view>设备名称：{{ item.deviceName }}</view>
+                    <view>设备编号：{{ item.deviceId }}</view>
+                    <view>设备Code：{{ item.code }}</view>
+                </view>
+                <view class="list-item-right" data-item="{{ item }}" bindtap="selectDevice">选择</view>
+            </view>
+        </view>
+        <view wx:if="{{ currentCMD === 'openLock'  }}">
+            <form-item label="当前使用功能：">
+                <text slot="content">开锁</text>
+            </form-item>
+            <form-item label="设备名称：">
+                <text slot="content">{{currentDevice.deviceName }}</text>
+            </form-item>
+            <form-item label="设备编号：">
+                <text slot="content">{{currentDevice.deviceId }}</text>
+            </form-item>
+        </view>
+        <view wx:if="{{ currentCMD === 'setIp'  }}">
+            <view style="font-size:24rpx;color:#999">
+                测试环境 IP: 113.105.90.219, port: 31821
+            </view>
+            <view style="font-size:24rpx;color:#999">
+                公司环境 IP: 159.75.189.133 port: 3000
+            </view>
+            <form-item label="当前使用功能：">
+                <text slot="content">设置IP</text>
+            </form-item>
+            <form-item label="设备名称：">
+                <text slot="content">{{currentDevice.deviceName }}</text>
+            </form-item>
+            <form-item label="设备编号：">
+                <text slot="content">{{currentDevice.deviceId }}</text>
+            </form-item>
+            <form-item label="IP地址：">
+                <van-field slot="content" value="{{ IP }}" focus placeholder="请输入IP地址" border="{{ false }}"
+                    bind:change="changeIP" />
+            </form-item>
+            <form-item label="端口号：">
+                <van-field slot="content" value="{{ port }}" placeholder="请输入端口号" border="{{ false }}"
+                    bind:change="changePort" />
+            </form-item>
+            <view style="margin-top: 20rpx">
+                <van-button  type="info" block bind:click="submitIPPort">提交</van-button>
+            </view>
+        </view>
+        <view wx:if="{{ currentCMD === 'getIp'  }}">
+            <form-item label="当前使用功能：">
+                <text slot="content">获取IP</text>
+            </form-item>
+            <form-item label="设备名称：">
+                <text slot="content">{{currentDevice.deviceName }}</text>
+            </form-item>
+            <form-item label="设备编号：">
+                <text slot="content">{{currentDevice.deviceId }}</text>
+            </form-item>
+            <form-item label="IP地址：">
+                <text slot="content">{{ IP }}</text>
+            </form-item>
+            <form-item label="端口号：">
+                <text slot="content">{{ port }}</text>
+            </form-item>
+        </view>
+        <view wx:if="{{ currentCMD === 'rebootLock'  }}">
+            <form-item label="当前使用功能：">
+                <text slot="content">重启设备</text>
+            </form-item>
+            <form-item label="设备名称：">
+                <text slot="content">{{currentDevice.deviceName }}</text>
+            </form-item>
+            <form-item label="设备编号：">
+                <text slot="content">{{currentDevice.deviceId }}</text>
+            </form-item>
+        </view>
+    </view>
+    <view class="spilt-line">----------工具栏----------</view>
+    <view class="tools">
+        <view class="tools-btn" data-cmd="getDeviceList" bindtap="getDeviceList">
+            <view class="icon">
+                <icon-font name="i-list" color="#467ee6"></icon-font>
+            </view>
+            <text>列表</text>
+        </view>
+        <view class="tools-btn" data-cmd="openLock" bindtap="openLock">
+            <view class="icon">
+                <icon-font name="i-open" color="#467ee6"></icon-font>
+            </view>
+            <text>开锁</text>
+        </view>
+        <view class="tools-btn" data-cmd="setIp" bindtap="setIp">
+            <view class="icon">
+                <icon-font name="i-ip" color="#467ee6"></icon-font>
+            </view>
+            <text>设置IP</text>
+        </view>
+        <view class="tools-btn" data-cmd="getIp" bindtap="getIp">
+            <view class="icon">
+                <icon-font name="i-ip" color="#467ee6"></icon-font>
+            </view>
+            <text>获取IP</text>
+        </view>
+        <view class="tools-btn" data-cmd="rebootLock" bindtap="rebootLock">
+            <view class="icon">
+                <icon-font name="i-reboot" color="#467ee6"></icon-font>
+            </view>
+            <text>重启</text>
+        </view>
+        <view class="tools-btn" data-cmd="stopBluetooth" bindtap="stopBluetooth">
+            <view class="icon">
+                <icon-font name="i-break" color="#467ee6"></icon-font>
+            </view>
+            <text>断开</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,21 @@
+<!--pages/lekai/index.wxml-->
+<view class="bluetooth">
+    <view class="bluetooth-wrapper">
+        <form-item label="IP地址：">
+            <van-field slot="content" value="{{ MAC }}" focus placeholder="请输入MAC地址" border="{{ false }}"
+                bind:change="changeMac" />
+        </form-item>
+        <form-item label="端口号：">
+            <van-field slot="content" value="{{ KEY }}" placeholder="请输入密钥KEY" border="{{ false }}"
+                bind:change="changeKey" />
+        </form-item>
+    </view>
+    <view class="tools">
+        <view class="btn">
+            <van-button class="btn" type="info" block bindtap="openLock">开锁</van-button>
+        </view>
+        <view class="btn">
+            <van-button class="btn" plain block bindtap="stopBluetooth">断开蓝牙</van-button>
+        </view>
+    </view>
+</view>

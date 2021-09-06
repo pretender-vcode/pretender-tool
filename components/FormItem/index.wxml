@@ -1,0 +1,16 @@
+<!--components/FormItem/index.wxml-->
+<view>
+  <view class="form-item {{border?'border':''}}">
+    <view class="form-item-label">
+      <text>{{label}}</text>
+      <slot name="label" wx:if="{{!label}}"></slot>
+    </view>
+    <view class="form-item-content">
+      <slot name="content"></slot>
+    </view>
+    <view class="form-item-right {{active?'active':''}}" wx:if="{{arrow}}" bindtap='formItemClick' bindtouchstart="formItemStart" bindtouchend="formItemEnd" bindtouchcancel="formItemEnd">
+      <image class="svg-icon" src='https://cdn-1256130579.cos.ap-shanghai.myqcloud.com/images/arrow-right.svg'></image>
+    </view>
+  </view>
+</view>
+
