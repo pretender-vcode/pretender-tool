@@ -27,7 +27,8 @@
     flex-direction: column;
     align-items: center;
     border-radius: 15rpx;
-    box-shadow: 0 0 10rpx #8ab9df;
+		/* box-shadow: 0 0 10rpx #8ab9df; */
+		border: 1rpx solid #0688f3;
     cursor: pointer;
 }
 .tool-item:nth-child(4n) {

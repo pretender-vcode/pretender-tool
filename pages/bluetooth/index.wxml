@@ -1,8 +1,8 @@
-<!-- index.wxml -->
+<!--pages/bluetooth/index.wxml-->
 <view class="bluetooth">
     <view class="spilt-line">----------信息栏----------</view>
     <view class="bluetooth-wrapper">
-        <view wx:if="{{ currentCMD === 'getDeviceList' }}">
+        <view >
             <view class="list-item {{ currentDevice.deviceId === item.deviceId ? 'is-active' : '' }}"
                 wx:for="{{ deviceList }}" wx:for-item="item" wx:key="deviceId" data-item="{{ item }}">
                 <view class="list-item-left">
@@ -15,7 +15,7 @@
                 <view class="list-item-right" data-item="{{ item }}" bindtap="selectDevice">选择</view>
             </view>
         </view>
-        <view wx:if="{{ currentCMD === 'openLock'  }}">
+        <!-- <view wx:if="{{ currentCMD === 'openLock'  }}">
             <form-item label="当前使用功能：">
                 <text slot="content">开锁</text>
             </form-item>
@@ -81,7 +81,7 @@
             <form-item label="设备编号：">
                 <text slot="content">{{currentDevice.deviceId }}</text>
             </form-item>
-        </view>
+        </view> -->
     </view>
     <view class="spilt-line">----------工具栏----------</view>
     <view class="tools">
@@ -89,9 +89,9 @@
             <view class="icon">
                 <icon-font name="i-list" color="#467ee6"></icon-font>
             </view>
-            <text>列表</text>
+            <text>搜索</text>
         </view>
-        <view class="tools-btn" data-cmd="openLock" bindtap="openLock">
+        <!-- <view class="tools-btn" data-cmd="openLock" bindtap="openLock">
             <view class="icon">
                 <icon-font name="i-open" color="#467ee6"></icon-font>
             </view>
@@ -114,7 +114,7 @@
                 <icon-font name="i-reboot" color="#467ee6"></icon-font>
             </view>
             <text>重启</text>
-        </view>
+        </view> -->
         <view class="tools-btn" data-cmd="stopBluetooth" bindtap="stopBluetooth">
             <view class="icon">
                 <icon-font name="i-break" color="#467ee6"></icon-font>

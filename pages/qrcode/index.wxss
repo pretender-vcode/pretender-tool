@@ -1,0 +1,36 @@
+/* pages/qrcode/index.wxss */
+.qrcode-wrapper {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+.upload-btn {
+	width: 100vw;
+	height: 200rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.qrcode-content {
+	position: relative;
+	flex: 1;
+	margin: 20rpx;
+	border: 1rpx solid #ddd;
+	border-radius: 10rpx;
+	padding: 40rpx 20rpx;
+	white-space: pre-wrap;
+}
+
+.qrcode-content::before {
+	width: 200rpx;
+	height: 60rpx;
+	content: '我是内容';
+	position: absolute;
+	top: -30rpx;
+	left: calc(50% - 100rpx);
+	background-color: #fff;
+	text-align: center;
+	color: rgb(116, 116, 248);
+}

@@ -30,10 +30,8 @@ Page({
             deviceList: []
         })
         const { flag } = e.currentTarget.dataset;
-        let { bluetooth } = this.data;
-        bluetooth.getDeviceList((res) => {
+        app.globalData.bluetooth.getDeviceList(['SmartLock'],(res) => {
             wx.hideLoading();
-            console.log("设备搜索结果：", res);
             if (res.code.startsWith('E0')) {
                 wx.showToast({
                     title: res.message,
@@ -41,7 +39,6 @@ Page({
                     duration: 2000
                 })
             } else {
-                wx.hideLoading();
                 this.setData({
                     deviceList: res.list
                 })
@@ -108,8 +105,7 @@ Page({
         });
     },
     stopBluetooth() {
-        let { bluetooth } = this.data;
-        bluetooth.closeBluetoothAdapter();
+        app.globalData.bluetooth.closeBluetoothAdapter('yes');
         this.setData({
             deviceList: [],
             currentCMD: '',

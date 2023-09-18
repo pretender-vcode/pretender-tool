@@ -1,0 +1,40 @@
+<!--pages/file/index.wxml-->
+<view class="file">
+    <view class="file-wrapper">
+        <view wx:if="{{ currentCMD === 'getDeviceList' }}">
+            <view class="list-item {{ currentDevice.deviceId === item.deviceId ? 'is-active' : '' }}" wx:for="{{ deviceList }}" wx:for-item="item" wx:key="deviceId" data-item="{{ item }}">
+                <view class="list-item-left">
+                    <view>设备类型：{{ item.type }}</view>
+                    <view>设备名称：{{ item.deviceName }}</view>
+                    <view>设备编号：{{ item.deviceId }}</view>
+                    <view>设备Code：{{ item.deviceCode }}</view>
+                    <view>设备Mac: {{ item.mac }}</view>
+                </view>
+                <view class="list-item-right" data-item="{{ item }}" bindtap="selectDevice">选择</view>
+            </view>
+        </view>
+
+    </view>
+    <view class="spilt-line">----------工具栏----------</view>
+    <view class="tools">
+        <view class="tools-btn" data-cmd="getDeviceList" bindtap="getDeviceList">
+            <view class="icon">
+                <icon-font name="i-list" color="#467ee6"></icon-font>
+            </view>
+            <text>列表</text>
+        </view>
+        <view class="tools-btn" data-cmd="dfu" bindtap="dfu">
+            <view class="icon">
+                <icon-font name="i-list" color="#467ee6"></icon-font>
+            </view>
+            <text>升级</text>
+        </view>
+        <view class="tools-btn" data-cmd="stopBluetooth" bindtap="stopBluetooth">
+            <view class="icon">
+                <icon-font name="i-break" color="#467ee6"></icon-font>
+            </view>
+            <text>断开</text>
+        </view>
+        <view  >写入进度：{{ percent }}%, 耗时{{ time }}s</view>
+    </view>
+</view>

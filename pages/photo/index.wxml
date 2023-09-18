@@ -1,0 +1,24 @@
+<!--pages/photo/index.wxml-->
+<view class="photo-container">
+	<view class="img-wrapper">
+		<view wx:if="{{files.length}}" class="preview" id='preview'>
+			<image class="pic" mode="widthFix" src="{{imageInfo.src}}"></image>
+		</view>
+		<view class="crop-wrapper" style="width: calc(100% - {{calcWidth}}px);height: calc(100% - {{calcHeight}}px);">
+			<view class="crop-unit unit1"></view>
+			<view class="crop-unit unit2"></view>
+			<view class="crop-unit unit3"></view>
+			<view class="crop-unit unit4"></view>
+			<view class="crop-unit unit5"></view>
+			<view class="crop-unit unit6"></view>
+			<view class="crop-unit unit7"></view>
+			<view class="crop-unit unit8"></view>
+			<view class="crop-unit unit9"></view>
+		</view>
+	</view>
+	<view class="tools">
+		<view class="upload-btn btn" bind:tap="uploadImg">
+			上传/拍照
+		</view>
+	</view>
+</view>

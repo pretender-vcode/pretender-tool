@@ -1,0 +1,9 @@
+<!--pages/qrcode/index.wxml-->
+<view class="qrcode-wrapper">
+	<view class="upload-btn">
+		<van-button icon="scan" type="info" bind:click="handleScan">点击我识别</van-button>
+	</view>
+	<view class="qrcode-content">
+		<rich-text style="white-space: pre-wrap;" nodes="{{content}}"></rich-text>
+	</view>
+</view>

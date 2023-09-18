@@ -9,7 +9,7 @@
             <view class="tool-item-title">{{ item.name}}</view>
         </view>
     </view>
-    <view class="footer">
+    <!-- <view class="footer">
         <popup-picker  columns="{{ envList }}" options="{{ envOption }}" placeholder="请选择运行环境" clearable bind:setValue="setEnv"></popup-picker>
-    </view>
+    </view> -->
 </view>

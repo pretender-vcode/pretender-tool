@@ -6,47 +6,63 @@ Page({
      * 页面的初始数据
      */
     data: {
-        toolList:[
-            {
+        toolList: [{
                 id: 1,
-                name: '利他蓝牙',
-                icon: 'i-bluetooth',
-                url: '/pages/lita/index'
+                name: '二维码识别',
+                icon: 'i-qrcode',
+                url: '/pages/qrcode/index',
             },
             {
                 id: 2,
-                name: '乐开蓝牙',
+                name: '蓝牙扫描',
                 icon: 'i-bluetooth',
-                url: '/pages/lekai/index'
-            }
-        ],
-        envList: [
-            {
-                id: 'uat',
-                name: '测试环境'
+                url: '/pages/bluetooth/index',
             },
             {
-                id: 'prod',
-                name: '正式环境'
+                id: 1,
+                name: '魔法图片',
+                icon: 'i-camera',
+                url: '/pages/photo/index'
             },
+            // {
+            //     id: 2,
+            //     name: '乐开蓝牙',
+            //     icon: 'i-bluetooth',
+            //     url: '/pages/lekai/index'
+            // },
+            // {
+            //     id: 3,
+            //     name: '大象蓝牙',
+            //     icon: 'i-bluetooth',
+            //     url: '/pages/daxiang/index'
+            // },
+            // {
+            //     id: 4,
+            //     name: '文件读写',
+            //     icon: 'i-file',
+            //     url: '/pages/file/index'
+            // }
         ],
-        envOption: {
-            id: 'id',
-            name: 'name'
-        }
+        // envList: [
+        //     {
+        //         id: 'uat',
+        //         name: '测试环境'
+        //     },
+        //     {
+        //         id: 'prod',
+        //         name: '正式环境'
+        //     },
+        // ],
+        // envOption: {
+        //     id: 'id',
+        //     name: 'name'
+        // }
     },
     redirectPage(e) {
-        const { item: { url } } = e.currentTarget.dataset;
-        if(!app.globalData.env) {
-            return wx.showToast({
-              title: '请选择运行环境',
-              icon: 'error',
-              duration: 2000
-            })
-        }
+        const { item: { url, id } } = e.currentTarget.dataset;
         wx.navigateTo({
-          url
-        }) 
+            url
+        })
     },
     setEnv(e) {
         console.log("当前运行环境：", e.detail);
@@ -55,56 +71,56 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
+    onLoad: function(options) {
 
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
-    onReady: function () {
+    onReady: function() {
 
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function () {
+    onShow: function() {
 
     },
 
     /**
      * 生命周期函数--监听页面隐藏
      */
-    onHide: function () {
+    onHide: function() {
 
     },
 
     /**
      * 生命周期函数--监听页面卸载
      */
-    onUnload: function () {
+    onUnload: function() {
 
     },
 
     /**
      * 页面相关事件处理函数--监听用户下拉动作
      */
-    onPullDownRefresh: function () {
+    onPullDownRefresh: function() {
 
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
-    onReachBottom: function () {
+    onReachBottom: function() {
 
     },
 
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage: function () {
+    onShareAppMessage: function() {
 
     }
 })

@@ -11,6 +11,8 @@
                     <view>设备编号：{{ item.deviceId }}</view>
                     <view>设备Code：{{ item.deviceCode }}</view>
                     <view>设备Mac: {{  item.mac }}</view>
+                    <view>设备状态: {{  item.status }}</view>
+                    <view>设备电量: {{  item.electricity  }}</view>
                 </view>
                 <view class="list-item-right" data-item="{{ item }}" bindtap="selectDevice">选择</view>
             </view>
@@ -26,54 +28,9 @@
                 <text slot="content">{{currentDevice.deviceId }}</text>
             </form-item>
         </view>
-        <view wx:if="{{ currentCMD === 'setIp'  }}">
-            <view style="font-size:24rpx;color:#999">
-                测试环境 IP: 113.105.90.219, port: 31821
-            </view>
-            <view style="font-size:24rpx;color:#999">
-                公司环境 IP: 159.75.189.133 port: 3000
-            </view>
+        <view wx:if="{{ currentCMD === 'closeLock'  }}">
             <form-item label="当前使用功能：">
-                <text slot="content">设置IP</text>
-            </form-item>
-            <form-item label="设备名称：">
-                <text slot="content">{{currentDevice.deviceName }}</text>
-            </form-item>
-            <form-item label="设备编号：">
-                <text slot="content">{{currentDevice.deviceId }}</text>
-            </form-item>
-            <form-item label="IP地址：">
-                <van-field slot="content" value="{{ IP }}" focus placeholder="请输入IP地址" border="{{ false }}"
-                    bind:change="changeIP" />
-            </form-item>
-            <form-item label="端口号：">
-                <van-field slot="content" value="{{ port }}" placeholder="请输入端口号" border="{{ false }}"
-                    bind:change="changePort" />
-            </form-item>
-            <view style="margin-top: 20rpx">
-                <van-button  type="info" block bind:click="submitIPPort">提交</van-button>
-            </view>
-        </view>
-        <view wx:if="{{ currentCMD === 'getIp'  }}">
-            <form-item label="当前使用功能：">
-                <text slot="content">获取IP</text>
-            </form-item>
-            <form-item label="设备名称：">
-                <text slot="content">{{currentDevice.deviceName }}</text>
-            </form-item>
-            <form-item label="设备编号：">
-                <text slot="content">{{currentDevice.deviceId }}</text>
-            </form-item>
-            <form-item label="IP地址：">
-                <text slot="content">{{ IP }}</text>
-            </form-item>
-            <form-item label="端口号：">
-                <text slot="content">{{ port }}</text>
-            </form-item>
-        </view>
-        <view wx:if="{{ currentCMD === 'rebootLock'  }}">
-            <form-item label="当前使用功能：">
-                <text slot="content">重启设备</text>
+                <text slot="content">关锁</text>
             </form-item>
             <form-item label="设备名称：">
                 <text slot="content">{{currentDevice.deviceName }}</text>
@@ -97,17 +54,11 @@
             </view>
             <text>开锁</text>
         </view>
-        <view class="tools-btn" data-cmd="setIp" bindtap="setIp">
+        <view class="tools-btn" data-cmd="closeLock" bindtap="closeLock">
             <view class="icon">
-                <icon-font name="i-ip" color="#467ee6"></icon-font>
+                <icon-font name="i-close" color="#467ee6"></icon-font>
             </view>
-            <text>设置IP</text>
-        </view>
-        <view class="tools-btn" data-cmd="getIp" bindtap="getIp">
-            <view class="icon">
-                <icon-font name="i-ip" color="#467ee6"></icon-font>
-            </view>
-            <text>获取IP</text>
+            <text>关锁</text>
         </view>
         <view class="tools-btn" data-cmd="rebootLock" bindtap="rebootLock">
             <view class="icon">
